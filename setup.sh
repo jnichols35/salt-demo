@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Check if SaltStack is already installed
-if [ -f /etc/salt/minion ] || [ -f "C:\salt\conf\minion" ]; then
+if [ -f /etc/salt/minion ]; then
     echo "SaltStack is already installed."
 else
     echo "SaltStack is not installed. Proceeding with installation..."
@@ -15,6 +15,8 @@ git clone https://github.com/jnichols35/salt-demo /tmp/salt-demo
 
 # Define the destination directory for the SaltStack files
 salt_dir="/opt/srv/salt-demo"
+minion_file="/tmp/salt-demo/minion"
+salt_minion_config="/etc/salt/minion"
 
 # Create the directory if it doesn't exist
 if [ ! -d "$salt_dir" ]; then
@@ -22,8 +24,6 @@ if [ ! -d "$salt_dir" ]; then
 fi
 
 # Copy the .sls files to the destination directory
-minion_file="/tmp/salt-demo/minion"
-salt_minion_config="/etc/salt/minion"
 cp -r /tmp/salt-demo/srv/salt-demo/* "$salt_dir"
 
 # Update the minion configuration file
