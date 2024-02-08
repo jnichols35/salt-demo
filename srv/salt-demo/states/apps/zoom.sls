@@ -1,3 +1,3 @@
-slack:
+zoom:
   pkg.installed:
     - name: zoom

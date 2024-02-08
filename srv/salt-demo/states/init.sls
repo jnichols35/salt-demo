@@ -2,3 +2,4 @@
 
 include:
   - .softwareupdates
+  - .apps
