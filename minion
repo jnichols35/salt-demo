@@ -1,0 +1,25 @@
+master_type: disable
+
+file_client: local
+
+file_roots:
+  base:
+    - /opt/srv/salt-demo
+    # - C:\salt\srv\salt-demo
+
+states_dirs:
+  - /opt/srv/salt-demo/_states
+
+grains_dirs:
+  - /opt/srv/salt-demo/_grains
+
+module_dirs:
+  - /opt/srv/salt-demo/_modules
+
+pillar_roots:
+  base:
+    - /opt/srv/salt-demo/_pillars
+
+multiprocessing: True
+
+log_level: debug
