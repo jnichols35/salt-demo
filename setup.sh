@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Check if SaltStack is already installed
-if [ -f /etc/salt/minion ]; then
+if command -v salt-call >/dev/null 2>&1; then
     echo "SaltStack is already installed."
 else
     echo "SaltStack is not installed. Proceeding with installation..."
@@ -9,6 +9,7 @@ else
     # Install SaltStack
     curl -L https://bootstrap.saltproject.io -o install_salt.sh
     sudo sh install_salt.sh -P
+fi
 
 # Clone the Git repository
 git clone https://github.com/jnichols35/salt-demo /tmp/salt-demo
